@@ -13,37 +13,29 @@ Platino se le hará el descuento del 25%
 
 // evaluarCupon
 
-let precio = prompt("Introduce el precio");
-let evaluarCupon = prompt("Introduce el cupón: Bronce, Plata, Oro, Platino");
-let compra = 0;
-let descuento = 0;
+let precio = prompt("¿Cuál fue el precio que pagaste?");
+let evaluarCupon = prompt("¿Qué cupón tienes? (Bronce, Plata, Oro, Platino)");
+let porcentajesDescuentos = ["5%", "10%", "20%", "25%"];
+let descuento;
 
-switch(evaluarCupon) {
+switch (evaluarCupon) {
   case "Bronce":
-    descuento = precio * 0.05;
-    compra = precio - descuento;
-    document.write("Te corresponde 5% de descuento, ");
-    document.write("Te costó: " + "$" + precio + " y con el descuento pagarás " + "$" + compra);
+    descuento = precio * 0.95;
+    document.write(`Pagaste $${precio}, y gracias al cupón "${evaluarCupon}" tienes un descuento del ${porcentajesDescuentos[0]} y pagarás $${descuento}`);
     break;
   case "Plata":
-    descuento = precio * 0.10;
-    compra = precio - descuento;
-    document.write("Te corresponde 10% de descuento, ");
-    document.write("te costó: " + "$" + precio + " y con el descuento pagarás "  + "$" + compra);
+    descuento = precio * 0.90;
+    document.write(`Pagaste $${precio}, y gracias al cupón "${evaluarCupon}" tienes un descuento del ${porcentajesDescuentos[1]} y pagarás $${descuento}`);
     break;
   case "Oro":
-    descuento = precio * 0.20;
-    compra = precio - descuento;
-    document.write("Te corresponde 20% de descuento, ");
-    document.write("te costó: " + "$" + precio + " y con el descuento pagarás "  + "$" + compra);
+    descuento = precio * 0.80;
+    document.write(`Pagaste $${precio}, y gracias al cupón "${evaluarCupon}" tienes un descuento del ${porcentajesDescuentos[2]} y pagarás $${descuento}`);
     break;
   case "Platino":
-    descuento = precio * 0.25;
-    compra = precio - descuento;
-    document.write("Te corresponde 25% de descuento, ");
-    document.write("te costó: " + "$" + precio + " y con el descuento pagarás "  + "$" + compra);
+    descuento = precio * 0.75;
+    document.write(`Pagaste $${precio}, y gracias al cupón "${evaluarCupon}" tienes un descuento del ${porcentajesDescuentos[3]} y pagarás $${descuento}`);
     break;
-  default: 
-    console.log("Cupón erróneo");
+  default:
+    document.write('ERROR, cupón no válido');
     break;
 }
